@@ -1,0 +1,20 @@
+syntax = "proto3";
+package chat;
+option go_package = "./chat";
+
+import "annotations.proto";
+
+message Message {
+  string body = 1;
+}
+
+service ChatService {
+  rpc SayHello(Message) returns (Message) {}
+
+  rpc SayHelloAnd(Message) returns (Message) {
+    option (chat.http) = {
+      get: "/v1/book"
+      //body: "*"
+    };
+  }
+}
