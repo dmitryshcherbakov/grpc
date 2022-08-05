@@ -1,4 +1,4 @@
-module github.com/dmitryshcherbakov/grpc/pcbook
+module dmitryshcherbakov.grpc.pcbook
 
 go 1.18
 
