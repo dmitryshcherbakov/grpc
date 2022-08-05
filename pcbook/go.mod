@@ -1,8 +1,7 @@
 module github.com.dmitryshcherbakov.grpc.pcbook
 
 go 1.16
-require 
-(
+require (
     github.com/golang/protobuf v1.5.2 // indirect
     github.com/google/uuid v1.3.0 // indirect
     github.com/kisielk/gotool v1.0.0 // indirect
