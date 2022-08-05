@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"pcbook.pc/proto/pb"
+	"github.com/dmitryshcherbakov/grpc/pcbook/proto/pb"
 )
 
 /*Указываем rand использовать текущие UNIXNano как начальные значения*/
