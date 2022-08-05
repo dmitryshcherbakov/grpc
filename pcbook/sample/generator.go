@@ -1,7 +1,6 @@
 package sample
 
 import (
-	"fmt"
 
 	//"google.golang.org/genproto/googleapis/maps/playablelocations/v3/sample"
 
@@ -9,28 +8,27 @@ import (
 	//"pcbook.pc/proto/pb"
 
 	"github.com/dmitryshcherbakov/grpc/pcbook/proto/pb"
-	"github.com/dmitryshcherbakov/grpc/pcbook/sample"
 	//"pcbook.pc/sample"
 )
 
 func NewKeyboard() *pb.Keyboard {
 	keyboard := &pb.Keyboard{
-		Layout:  sample.RandomKeyboardLayout(),
-		Backlit: sample.RandomBool(),
+		Layout:  RandomKeyboardLayout(),
+		Backlit: RandomBool(),
 	}
 
 	return keyboard
 }
 
 func NewCPU() *pb.CPU {
-	brand := sample.RandomCPUBrand()
-	name := sample.RandomCPUName(brand)
+	brand := RandomCPUBrand()
+	name := RandomCPUName(brand)
 
-	numberCores := sample.RandomInt(2, 8)
-	numberThreads := sample.RandomInt(numberCores, 12)
+	numberCores := RandomInt(2, 8)
+	numberThreads := RandomInt(numberCores, 12)
 
-	minGhz := sample.RandomFloat64(2.0, 3.5)
-	maxGhz := sample.RandomFloat64(minGhz, 5.0)
+	minGhz := RandomFloat64(2.0, 3.5)
+	maxGhz := RandomFloat64(minGhz, 5.0)
 
 	cpu := &pb.CPU{
 		Brand:         brand,
@@ -45,14 +43,14 @@ func NewCPU() *pb.CPU {
 }
 
 func NewGPU() *pb.GPU {
-	brand := sample.RandomGPUBrand()
-	name := sample.RandomGPUName(brand)
+	brand := RandomGPUBrand()
+	name := RandomGPUName(brand)
 
-	minGhz := sample.RandomFloat64(1.0, 1.5)
-	maxGhz := sample.RandomFloat64(minGhz, 2.0)
+	minGhz := RandomFloat64(1.0, 1.5)
+	maxGhz := RandomFloat64(minGhz, 2.0)
 
 	memory := &pb.Memory{
-		Value: uint64(sample.RandomInt(2, 6)),
+		Value: uint64(RandomInt(2, 6)),
 		Unit:  pb.Memory_GIGABYTE,
 	}
 
@@ -69,7 +67,7 @@ func NewGPU() *pb.GPU {
 
 func NewRAM() *pb.Memory {
 	ram := &pb.Memory{
-		Value: uint64(sample.RandomInt(4, 64)),
+		Value: uint64(RandomInt(4, 64)),
 		Unit:  pb.Memory_GIGABYTE,
 	}
 
@@ -80,7 +78,7 @@ func NewSSD() *pb.Storage {
 	ssd := &pb.Storage{
 		Driver: pb.Storage_SSD,
 		Memory: &pb.Memory{
-			Value: uint64(sample.RandomInt(128, 1024)),
+			Value: uint64(RandomInt(128, 1024)),
 			Unit:  pb.Memory_GIGABYTE,
 		},
 	}
@@ -92,7 +90,7 @@ func NewHDD() *pb.Storage {
 	hdd := &pb.Storage{
 		Driver: pb.Storage_HDD,
 		Memory: &pb.Memory{
-			Value: uint64(sample.RandomInt(1, 6)),
+			Value: uint64(RandomInt(1, 6)),
 			Unit:  pb.Memory_TERABYTE,
 		},
 	}
@@ -102,21 +100,21 @@ func NewHDD() *pb.Storage {
 
 func NewScreen() *pb.Screen {
 	screen := &pb.Screen{
-		SizeInch:   sample.RandomFloat32(13, 17),
-		Resolution: sample.RandomScreenResolution(),
-		Panel:      sample.RandomScreenPanel(),
-		Multitouch: sample.RandomBool(),
+		SizeInch:   RandomFloat32(13, 17),
+		Resolution: RandomScreenResolution(),
+		Panel:      RandomScreenPanel(),
+		Multitouch: RandomBool(),
 	}
 
 	return screen
 }
 
 func NewLaptop() *pb.Laptop {
-	brand := sample.RandomLaptopBrand()
-	name := sample.RandomLaptopName(brand)
+	brand := RandomLaptopBrand()
+	name := RandomLaptopName(brand)
 
 	laptop := &pb.Laptop{
-		Id:    sample.RandomID(),
+		Id:    RandomID(),
 		Brand: brand,
 		Name:  name,
 		Cpu:   NewCPU(),
@@ -126,10 +124,10 @@ func NewLaptop() *pb.Laptop {
 		Screen:   NewScreen(),
 		Keyboard: NewKeyboard(),
 		Weight: &pb.Laptop_WeightKg{
-			WeightKg: sample.RandomFloat64(1.0, 3.0),
+			WeightKg: RandomFloat64(1.0, 3.0),
 		},
-		PriceUsd:    sample.RandomFloat64(1500, 3000),
-		ReleaseYear: uint32(sample.RandomInt(2015, 2022)),
+		PriceUsd:    RandomFloat64(1500, 3000),
+		ReleaseYear: uint32(RandomInt(2015, 2022)),
 		UpdatedAt:   ptypes.TimestampNow(),
 	}
 
