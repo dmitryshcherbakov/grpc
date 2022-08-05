@@ -1,5 +1,4 @@
 package serializer_test
-
 import (
 	"fmt"
 	"testing"
@@ -9,7 +8,6 @@ import (
 	"github.com/dmitryshcherbakov/grpc/pcbook/serializer"
 	"github.com/stretchr/testify/require"
 )
-
 func TestFileSerializer(t *testing.T) {
 	t.Parallel()
 
