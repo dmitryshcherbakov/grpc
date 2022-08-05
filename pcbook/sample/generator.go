@@ -1,5 +1,6 @@
 package sample
 
+
 import (
 
 	//"google.golang.org/genproto/googleapis/maps/playablelocations/v3/sample"
@@ -11,6 +12,7 @@ import (
 	//"pcbook.pc/sample"
 )
 
+
 func NewKeyboard() *pb.Keyboard {
 	keyboard := &pb.Keyboard{
 		Layout:  RandomKeyboardLayout(),
@@ -19,7 +21,6 @@ func NewKeyboard() *pb.Keyboard {
 
 	return keyboard
 }
-
 func NewCPU() *pb.CPU {
 	brand := RandomCPUBrand()
 	name := RandomCPUName(brand)
