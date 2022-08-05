@@ -6,7 +6,11 @@ import (
 	//"google.golang.org/genproto/googleapis/maps/playablelocations/v3/sample"
 
 	"github.com/golang/protobuf/ptypes"
-	"pcbook.pc/proto/pb"
+	//"pcbook.pc/proto/pb"
+	//"github.com/dmitryshcherbakov/grpc/tree/main/pcbook/proto/pb"
+	//"github.com/dmitryshcherbakov/grpc/tree/main/pcbook/proto/pb"
+	"github.com/dmitryshcherbakov/grpc/tree/main/pcbook/proto/pb"
+	"gitlab.com/techschool/pcbook/sample"
 	"pcbook.pc/sample"
 )
 
