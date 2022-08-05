@@ -1,4 +1,4 @@
-module pcbook.pc
+module  dmitryshcherbakov.grpc.pcbook;
 
 go 1.16
 
