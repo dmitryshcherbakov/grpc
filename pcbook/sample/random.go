@@ -1,6 +1,5 @@
 package sample
 
-
 import (
 	"math/rand"
 	"time"
@@ -8,7 +7,6 @@ import (
 	"github.com/google/uuid"
 	"github.com/dmitryshcherbakov/grpc/pcbook/proto/pb"
 )
-
 
 /*Указываем rand использовать текущие UNIXNano как начальные значения*/
 func init() {
