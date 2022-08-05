@@ -1,4 +1,4 @@
-module github.com.dmitryshcherbakov.grpc.pcbook
+module github.com/dmitryshcherbakov/grpc/pcbook
 
 go 1.16
 require (
