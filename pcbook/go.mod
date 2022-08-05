@@ -1,6 +1,8 @@
 module github.com/dmitryshcherbakov/grpc/pcbook
 
+
 go 1.18
+
 
 require (
 	github.com/dmitryshcherbakov/grpc/pcbook v0.0.0-20220805160127-70ec486db02a
@@ -9,6 +11,7 @@ require (
 	github.com/stretchr/testify v1.8.0
 	google.golang.org/protobuf v1.28.1
 )
+
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
