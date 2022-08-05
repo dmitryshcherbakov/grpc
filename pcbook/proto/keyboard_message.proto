@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package proto;
+package  dmitryshcherbakov.grpc.pcbook;
 
 option go_package = "./pb";
 
