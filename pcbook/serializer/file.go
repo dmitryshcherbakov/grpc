@@ -21,3 +21,17 @@ func WriteProtobufToBinaryFile(message proto.Message, filename string) error {
 	//fmt.Println("WriteProtobufToBinaryFile succeeded	")
 	return nil
 }
+
+func ReadProtobufFromBinaryFile(filename string, message proto.Message) error {
+	data, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return fmt.Errorf("failed to read file: %v", err)
+	}
+
+	err = proto.Unmarshal(data, message)
+	if err != nil {
+		return fmt.Errorf("failed to unmarshal message: %v", err)
+	}
+
+	return nil
+}
