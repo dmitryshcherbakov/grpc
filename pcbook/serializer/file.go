@@ -9,8 +9,9 @@ import (
 )
 
 func WriteProtobufToJSONFile(message proto.Message, filename string) error {
-	/*data, err := ProtobufToJSONConvert(message)
-
+	//data, err := ProtobufToJSONConvertMessage(message)
+	/*data, err := JsonPlus(message)
+	
 	if err != nil {
 		return fmt.Errorf("cannot marshal proto message to JSON: %v", err)
 	}

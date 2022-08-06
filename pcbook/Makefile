@@ -4,3 +4,5 @@ protoc:
 	gofmt -s -w proto
 	gofmt -s -w proto
 	goimports -w -local "github.com/todo-server" proto
+test:
+	go test -cover -race ./...
