@@ -1,12 +1,12 @@
 package serializer
 
 import (
-	"github.com/golang/protobuf/jsonpb"
+	//"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
-func ProtobufToJSON(message proto.Message) (string, error) {
+func ProtobufToJSONConvert(message proto.Message) (string, error) {
 	/*marshaler := jsonpb.Marshaler{
 		EnumsAsInts:  false,
 		EmitDefaults: true,
@@ -22,5 +22,9 @@ func ProtobufToJSON(message proto.Message) (string, error) {
         EmitUnpopulated: true,
     }
 
-	return marshaler.Marshal(message)
+	data, err := marshaler.Marshal(message)
+
+    return string(data), err
+
+	//return marshaler.Marshal(message)
 }
