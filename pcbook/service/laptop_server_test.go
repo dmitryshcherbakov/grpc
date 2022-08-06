@@ -5,13 +5,13 @@ import(
 	"testing"
 
 
-	"github.com/golang/grpc/codes"
-	"github.com/golang/grpc/status"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 	"github.com/stretchr/testify/require"
 	"github.com/dmitryshcherbakov/grpc/pcbook/proto/pb"
-	"github.com/dmitryshcherbakov/grpc/sample"
-	"github.com/dmitryshcherbakov/grpc/service"
-	
+	"github.com/dmitryshcherbakov/grpc/pcbook/sample"
+	"github.com/dmitryshcherbakov/grpc/pcbook/service"
+
 )
 func TestServerCreateLaptop(t *testing.T) {
 	t.Parallel()
@@ -54,9 +54,9 @@ func TestServerCreateLaptop(t *testing.T) {
 		{
 			name: "success_duplicate_id",
 			laptop: laptopDuplicateID,
-			store: storeDuplicateID
+			store: storeDuplicateID,
 			code: codes.AlreadyExists,
-		}
+		},
 	}
 
 	for i := range testCases {
@@ -71,7 +71,7 @@ func TestServerCreateLaptop(t *testing.T) {
 
 			server := service.NewLaptopServer(tc.store)
 			res, err := server.CreateLaptop(context.Background(), req)
-			if tc.code == coes.OK{
+			if tc.code == codes.OK{
 				require.NoError(t, err)
 				require.NotNil(t, res)
 				require.NotEmpty(t, res.Id)
@@ -86,6 +86,6 @@ func TestServerCreateLaptop(t *testing.T) {
 				require.True(t, ok)
 				require.Equal(t, tc.code, st.Code())
 			}
-		}
+		})
 	}
 }

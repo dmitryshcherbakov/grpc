@@ -3,17 +3,21 @@ package service
 import(
 	"github.com/google/uuid"
 	"context"
-	"fmt"
+	//"fmt"
+	"log"
+	"errors"
 
 	"github.com/dmitryshcherbakov/grpc/pcbook/proto/pb"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 )
 
 type LaptopServer struct {
-
+	Store LaptopStore
 }
 
-func NewLaptopServer() *LaptopServer {
-	return &LaptopServer{}
+func NewLaptopServer(store LaptopStore) *LaptopServer {
+	return &LaptopServer{store}
 }
 
 func (server *LaptopServer) CreateLaptop(
@@ -22,7 +26,7 @@ func (server *LaptopServer) CreateLaptop(
 
 ) (*pb.CreateLaptopResponse, error) {
 	laptop := req.GetLaptop()
-	log.Printf("CreateLaptop(%v): %v", laptop.Id)
+	log.Printf("CreateLaptop %v", laptop.Id)
 
 	if len(laptop.Id) > 0 {
 
@@ -36,7 +40,7 @@ func (server *LaptopServer) CreateLaptop(
 			return nil, status.Errorf(codes.Internal, "Failed to generate UUID %v", err)
 		}
 		laptop.Id = id.String()
-
+	}
 		//Save loptop to memory
 		err := server.Store.Save(laptop)
 		if err != nil {
@@ -53,5 +57,4 @@ func (server *LaptopServer) CreateLaptop(
 			Id: laptop.Id,
 		}
 		return res, nil
-	}
 }

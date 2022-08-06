@@ -1,7 +1,12 @@
 package service
 
 import(
+	//"context"
+	"errors"
+	"fmt"
+	//"log"
 	"sync"
+
 
 	"github.com/dmitryshcherbakov/grpc/pcbook/proto/pb"
 	"github.com/jinzhu/copier"
@@ -19,7 +24,7 @@ type InMemoryLaptopStore struct {
 
 }
 
-func NewMemoryLaptopStore() *InMemoryLaptopStore {
+func NewInMemoryLaptopStore() *InMemoryLaptopStore {
 	return &InMemoryLaptopStore{
 		data: make(map[string]*pb.Laptop),
 	}
@@ -41,7 +46,7 @@ func (store *InMemoryLaptopStore) Save(laptop *pb.Laptop) error {
 		return fmt.Errorf("copier copy laptop error: %v", err)
 	}
 
-	store.data[other.id] = other
+	store.data[other.Id] = other
 	return nil
 
 

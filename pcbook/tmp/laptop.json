@@ -1,25 +1,25 @@
 {
-  "id":  "cc4d8212-cd2c-4f3d-b46d-81cc8611bb4a",
-  "brand":  "Apple",
-  "name":  "Macbook Pro",
+  "id":  "ef7c0fe3-a18a-427b-b742-eb8be2ee7de6",
+  "brand":  "Dell",
+  "name":  "Latitude",
   "cpu":  {
     "brand":  "AMD",
     "name":  "Ryzen 5 PRO 3800U",
     "number_cores":  7,
-    "number_threads":  12,
-    "min_ghz":  2.158372714238958,
-    "max_ghz":  2.65753956866674
+    "number_threads":  7,
+    "min_ghz":  2.2085471316070624,
+    "max_ghz":  3.675230799030806
   },
   "ram":  {
-    "value":  "31",
+    "value":  "43",
     "unit":  "GIGABYTE"
   },
   "gpus":  [
     {
-      "brand":  "NVIDIA",
-      "name":  "GTX 590-i",
-      "min_ghz":  1.0630622603651476,
-      "max_ghz":  1.4266908367437345,
+      "brand":  "AMD",
+      "name":  "RX 590",
+      "min_ghz":  1.3435340874386041,
+      "max_ghz":  1.496833632464678,
       "memory":  {
         "value":  "3",
         "unit":  "GIGABYTE"
@@ -28,20 +28,20 @@
   ],
   "storages":  [],
   "screen":  {
-    "size_inch":  13.20966,
+    "size_inch":  16.28904,
     "resolution":  {
-      "width":  4679,
-      "height":  2632
+      "width":  4899,
+      "height":  2756
     },
     "panel":  "IPS",
-    "multitouch":  true
+    "multitouch":  false
   },
   "keyboard":  {
     "layout":  "QWERTY",
     "backlit":  true
   },
-  "weight_kg":  1.1736438900687476,
-  "price_usd":  2112.651099076644,
-  "release_year":  2021,
-  "updated_at":  "2022-08-06T11:49:43.513765800Z"
+  "weight_kg":  1.7409925617329156,
+  "price_usd":  2928.8602475907855,
+  "release_year":  2022,
+  "updated_at":  "2022-08-06T20:45:04.769512100Z"
 }
