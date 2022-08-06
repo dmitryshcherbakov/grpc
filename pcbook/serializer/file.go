@@ -30,7 +30,7 @@ func WriteProtobufToJSONFile(message proto.Message, filename string) error {
 	data, err := marshaler.Marshal(message)
     //return string(b), err
 
-	err = ioutil.WriteFile(filename, []byte(data), 0644)
+	err = ioutil.WriteFile(filename, []byte(string(data)), 0644)
 	if err != nil {
 		return fmt.Errorf("cannot write to JSON data to file: %v", err)
 	}
