@@ -1,8 +1,8 @@
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/dmitryshcherbakov/grpc/pcbook v0.0.0-20220805160127-70ec486db02a h1:0vg5GRzQWkEG2B/wX6JaDCUcq8PJa3VyKr+/2CNWFyo=
-github.com/dmitryshcherbakov/grpc/pcbook v0.0.0-20220805160127-70ec486db02a/go.mod h1:RROagruCokd/J3B2Q6BMc946KeRlFq5VQ8bbSoSc9MM=
+github.com/dmitryshcherbakov/grpc/pcbook v0.0.0-20220805195909-e2d04fce6ba5 h1:6QjtWpHv9aV/4advQosstL8jbpHRxZ6Uw8uoGcs6sMs=
+github.com/dmitryshcherbakov/grpc/pcbook v0.0.0-20220805195909-e2d04fce6ba5/go.mod h1:TzxKDg4kST3WeOkmc0sL8JroXDwe7SbcHIMVu+A9Ask=
 github.com/golang/protobuf v1.5.0/go.mod h1:FsONVRAS9T7sI+LIUmWTfcYkHO4aIWwzhcaSAoJOfIk=
 github.com/golang/protobuf v1.5.2 h1:ROPKBNFfQgOUMifHyP+KYbvpjbdoFNs+aK7DXlji0Tw=
 github.com/golang/protobuf v1.5.2/go.mod h1:XVQd3VNwM+JqD3oG2Ue2ip4fOMUkwXdXDdiuN0vRsmY=
