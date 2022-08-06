@@ -5,11 +5,11 @@ import (
 	"io/ioutil"
 
 	"google.golang.org/protobuf/proto"
-	//"google.golang.org/protobuf/encoding/protojson"
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 func WriteProtobufToJSONFile(message proto.Message, filename string) error {
-	data, err := ProtobufToJSONConvert(message)
+	/*data, err := ProtobufToJSONConvert(message)
 
 	if err != nil {
 		return fmt.Errorf("cannot marshal proto message to JSON: %v", err)
@@ -20,9 +20,9 @@ func WriteProtobufToJSONFile(message proto.Message, filename string) error {
 	if err != nil {
 		return fmt.Errorf("cannot write to JSON data to file: %v", err)
 	}
-	return nil
+	return nil*/
 
-	/*marshaler := protojson.MarshalOptions{
+	marshaler := protojson.MarshalOptions{
         Indent:          "  ",
         UseProtoNames:   true,
         EmitUnpopulated: true,
@@ -36,7 +36,7 @@ func WriteProtobufToJSONFile(message proto.Message, filename string) error {
 		return fmt.Errorf("cannot write to JSON data to file: %v", err)
 	}
 
-	return nil*/
+	return nil
 }
 
 func WriteProtobufToBinaryFile(message proto.Message, filename string) error {
