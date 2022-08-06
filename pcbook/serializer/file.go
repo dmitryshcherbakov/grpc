@@ -9,19 +9,19 @@ import (
 )
 
 func WriteProtobufToJSONFile(message proto.Message, filename string) error {
-	/*data, err := ProtobufToJSON(message)
+	data, err := ProtobufToJSON(message)
+	
 	if err != nil {
 		return fmt.Errorf("cannot marshal proto message to JSON: %v", err)
 	}
 
-	err = ioutil.WriteFile(filename, []byte(data), 0644)
+	err = ioutil.WriteFile(filename, []byte(string(data)), 0644)
 	if err != nil {
 		return fmt.Errorf("cannot write to JSON data to file: %v", err)
 	}
+	return nil
 
-	return nil*/
-
-	marshaler := protojson.MarshalOptions{
+	/*marshaler := protojson.MarshalOptions{
         Indent:          "  ",
         UseProtoNames:   true,
         EmitUnpopulated: true,
@@ -35,7 +35,7 @@ func WriteProtobufToJSONFile(message proto.Message, filename string) error {
 		return fmt.Errorf("cannot write to JSON data to file: %v", err)
 	}
 
-	return nil
+	return nil*/
 }
 
 func WriteProtobufToBinaryFile(message proto.Message, filename string) error {
