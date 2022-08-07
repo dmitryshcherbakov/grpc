@@ -16,6 +16,8 @@ var ErrAlreadyExists = errors.New("already exists record")
 
 type LaptopStore interface {
 	Save (laptop *pb.Laptop) error
+	// Интерфейс для поиск ноутбука принимает id ноутбука возвращает уже объект
+	Find(id string) (*pb.Laptop, error)
 }
 
 type InMemoryLaptopStore struct {
@@ -49,5 +51,25 @@ func (store *InMemoryLaptopStore) Save(laptop *pb.Laptop) error {
 	store.data[other.Id] = other
 	return nil
 
+
+}
+
+//Ищем ноутбук и возрвращаем обхект с ошибкой
+func (store *InMemoryLaptopStore) Find(id string) (*pb.Laptop, error) {
+	store.mutex.RLock() //Вызывам Мутекс для получаения блокировки чтения
+	defer store.mutex.RUnlock() //Отключаем блокировка по завершению выполнянеия функции
+	
+	laptop := store.data[id]//Теперь ищшем ноутбук в карте store.data
+	if laptop == nil { //Если ничего не найдено просто возвращаем nil
+		return nil, nil
+	}
+	
+	other := &pb.Laptop{}//Если ноутбук найден выполянем глубокое копирования объекта
+	err := copier.Copy(other, laptop) // Копируем сам объект
+	if err != nil { // Если возникла ошика возвращем ее
+		return nil, fmt.Errorf("error creating temporary laptop data: %v", err)
+	}
+
+	return other, nil
 
 }

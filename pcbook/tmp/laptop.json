@@ -1,47 +1,47 @@
 {
-  "id":  "ef7c0fe3-a18a-427b-b742-eb8be2ee7de6",
+  "id":  "1810baff-4ca6-4f3a-a10d-43b3c2899d84",
   "brand":  "Dell",
-  "name":  "Latitude",
+  "name":  "XPS",
   "cpu":  {
-    "brand":  "AMD",
-    "name":  "Ryzen 5 PRO 3800U",
-    "number_cores":  7,
-    "number_threads":  7,
-    "min_ghz":  2.2085471316070624,
-    "max_ghz":  3.675230799030806
+    "brand":  "Intel",
+    "name":  "Core i9-9998JF",
+    "number_cores":  6,
+    "number_threads":  6,
+    "min_ghz":  3.044587701586387,
+    "max_ghz":  3.291638922615242
   },
   "ram":  {
-    "value":  "43",
+    "value":  "63",
     "unit":  "GIGABYTE"
   },
   "gpus":  [
     {
       "brand":  "AMD",
       "name":  "RX 590",
-      "min_ghz":  1.3435340874386041,
-      "max_ghz":  1.496833632464678,
+      "min_ghz":  1.0339278405629226,
+      "max_ghz":  1.4637801448378773,
       "memory":  {
-        "value":  "3",
+        "value":  "4",
         "unit":  "GIGABYTE"
       }
     }
   ],
   "storages":  [],
   "screen":  {
-    "size_inch":  16.28904,
+    "size_inch":  13.415029,
     "resolution":  {
-      "width":  4899,
-      "height":  2756
+      "width":  5349,
+      "height":  3009
     },
     "panel":  "IPS",
     "multitouch":  false
   },
   "keyboard":  {
-    "layout":  "QWERTY",
-    "backlit":  true
+    "layout":  "QWERTZ",
+    "backlit":  false
   },
-  "weight_kg":  1.7409925617329156,
-  "price_usd":  2928.8602475907855,
-  "release_year":  2022,
-  "updated_at":  "2022-08-06T20:45:04.769512100Z"
+  "weight_kg":  1.9899100318872611,
+  "price_usd":  2211.104873288207,
+  "release_year":  2019,
+  "updated_at":  "2022-08-07T17:58:02.055452Z"
 }
