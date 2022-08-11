@@ -3,7 +3,8 @@ package service
 import(
 	"github.com/google/uuid"
 	"context"
-	//"fmt"
+	"fmt"
+	"time"
 	"log"
 	"errors"
 
@@ -41,6 +42,25 @@ func (server *LaptopServer) CreateLaptop(
 		}
 		laptop.Id = id.String()
 	}
+
+		//Блок для теста предположим что у нас долгое выполнение кода на этом участке
+		// На стороне клиента получим ошибку с кодом DeadlineExceeded
+		// Мы хотим чтобы сервер тоже прекратил свое выполнеие в этом случаи
+		time.Sleep(time.Second * 6) 
+		fmt.Println(ctx.Err());
+
+		if ctx.Err() == context.Canceled {
+			log.Printf("request is canceled")
+			return nil, status.Errorf(codes.Canceled, "request is canceled")
+		}
+
+		if ctx.Err() == context.DeadlineExceeded {
+			log.Printf("deadline is exceeded server")
+			//Возвращаем клиенту код ошибки
+			return nil, status.Errorf(codes.DeadlineExceeded, "deadline exceeded server")
+		}
+
+
 		//Save loptop to memory
 		err := server.Store.Save(laptop)
 		if err != nil {

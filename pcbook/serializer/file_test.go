@@ -10,6 +10,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"
 )
+
+//Тестируем сериализацию бинарных данных 
+//в JSON для этого создаем два файл laptop.bin and laptop.json
 func TestFileSerializer(t *testing.T) {
 	t.Parallel()
 
